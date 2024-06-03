@@ -5,31 +5,54 @@
     height: 2rem;
     width: 2rem;
   }
-  .sidebar{
-    height: 100vh;
-    width: 30vh;   
-    text-align: center;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-  }
   
-  .sidebar .sidebar-item {
+.sidebar{
+  height: 100vh;
+  width: 30vh;   
+  text-align: center;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+}
+
+@media only screen and (max-width: 600px) {
+  .sidebar{
+    height: 15vh;
+    width: 100vw;
+    text-align: center;
+    flex-direction: row;
+    justify-content: center;
+    position: fixed;
+    background-color: #bababa;
+  }
+
+  .sidebar .sidebar-item .tooltip-text {
+    visibility: hidden;
+    color: black;
+    position: absolute;
+    top: 70%;
+    left: 15%; 
+    font-size: 10px;
+    transform: translateY(90%);
+}
+
+}
+
+.sidebar .sidebar-item {
     position: relative;
 }
 
 .sidebar .sidebar-item .tooltip-text {
-    visibility: hidden;
-    color: black;
-    position: absolute;
-    top: 50%;
-    left: 130%; 
-    font-size: 15px;
-    transform: translateY(-50%);
-  
+  visibility: hidden;
+  color: black;
+  position: absolute;
+  top: 50%;
+  left: 130%; 
+  font-size: 15px;
+  transform: translateY(-50%);
 }
 
 .sidebar .sidebar-item:hover .tooltip-text {
@@ -57,10 +80,25 @@
   
 }
 
+@media only screen and (max-width: 600px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 115vh;
+  }
+  .profileImage{
+    height: 400px;
+    width: 400px;  
+}
+
+}
+
 .profileImage{
     height: 400px;
     width: 400px;
-    margin-left: 60px;
+    
 }
 
 .info {
@@ -137,40 +175,50 @@ button:active {
   width: 400px;
 }
 
-.bgImage{
-  height: 100px;
-  width: 200px;
-  text-align: center;
-  padding: 10px;
-}
-.project-container{
-height: 150vh;
+.Projectcontainer{
+height: 100vh;
 display: flex;
+justify-content: center;
+align-items: center;
 flex-direction: column;
 background-size: cover;
 
+img {
+  max-width: 100px;
+  border-radius: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #222;
+  transition: transform 200ms ease-in-out;
+  height: 150px;
+  width: 150px;
+}
+
+a:hover {
+  transform: scale(1.15);
+}
 
 }
-.Project-sec-title{
-  font-weight: bold;
-  font-size: x-large;
-  text-align: center;
-  margin-top: 40px;
-  text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+
+.ProjectTitle{
+  font-family: 'Rubik', sans-serif;
+  font-size: 40px;
+  font-weight:900 ;
+  text-transform: uppercase;
+  margin: 0;
 }
-.ProjectsList{
+
+.ProjectsContainer{ 
+  margin: 20px;
+  margin-left: 75px;
   display: flex;
-  justify-content: center;
   flex-direction: row;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
-  margin: 50px;
-}
-.project-title{
-  font-size: medium;
-}
-.projectItem{
-  margin: 10px;
-  padding: 10px;
+  gap: 20px;
 }
 
 .front{
@@ -255,11 +303,18 @@ background-size: cover;
   padding: 35px 20%;
   padding-right: calc(10% - 30px);
 }
-row{
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-column-gap: 20px;
+@media only screen and (max-width: 600px) {
+  .Educationcontainer{
+    height: 320vh;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 35px 20%;
+    padding-right: calc(10% - 30px);
+  }
 }
+
 .col header.title{
 	font-family: helvetica;
 	color: black;
@@ -359,6 +414,29 @@ hr {
   margin: 0;
 }
 
+@media only screen and (max-width: 600px) {
+  .Certificationcontainer {
+    height: 200vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  img {
+      max-width: 300px;
+      border-radius: 20px;
+  }
+  
+  
+  .CertificationsContainer {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+}
 .Certificationcontainer {
   height: 130vh;
   display: flex;
